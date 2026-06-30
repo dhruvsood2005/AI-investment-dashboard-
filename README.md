@@ -2,6 +2,11 @@
 
 A finance + actuarial + coding + AI project 
 
+## Live Demo
+
+Frontend: https://ai-investment-dashboard-six.vercel.app  
+Backend API: https://ai-investment-dashboard-thuk.onrender.com/docs
+
 Users enter a listed stock or ETF ticker and benchmark. The app returns a price chart, daily returns, annualised return, volatility, max drawdown, Sharpe ratio, historical Value at Risk, Expected Shortfall, beta/correlation vs benchmark, and an AI-style risk summary.
 
 > Educational project only. Not financial advice.
@@ -96,3 +101,10 @@ Without these variables, the app uses a rule-based MVP summary.
 - Add portfolio mode with multiple tickers
 - Add proper JSON structured AI output
 - Add unit tests for risk metric calculations
+
+## Deployment
+
+- Frontend deployed on Vercel
+- Backend deployed on Render
+- AI summary generated using Groq's OpenAI-compatible API
+- Market data fetched using yfinance
