@@ -25,19 +25,23 @@ def get_allowed_origins() -> List[str]:
     origins = [
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        "https://ai-investment-dashboard-six.vercel.app",
+        "https://ai-investment-dashboard-dhruv-sood-s-projects.vercel.app",
+        "https://ai-investment-dashboard-e8v19d1h5-dhruv-sood-s-projects.vercel.app",
     ]
 
     frontend_url = os.getenv("FRONTEND_URL")
     if frontend_url:
         origins.append(frontend_url.rstrip("/"))
 
-    return origins
+    return list(set(origins))
 
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=get_allowed_origins(),
-    allow_credentials=True,
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
